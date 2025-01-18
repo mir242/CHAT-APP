@@ -10,11 +10,11 @@ services:
     volumes:
       - ./data/db:/var/lib/postgresql/data
     ports:
-      - "5432:5432"
+      - 5432:5432
     environment:
       - POSTGRES_DB=chat_app
       - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_PASSWORD=123456
     networks:
       - my_network
 
@@ -22,6 +22,6 @@ services:
     image: adminer
     restart: always
     ports:
-      - "8080:8080"
+      - 8080:8080
     networks:
       - my_network
