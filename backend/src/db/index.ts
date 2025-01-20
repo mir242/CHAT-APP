@@ -2,6 +2,8 @@ import { Pool } from "pg";
 import { drizzle, NodePgDatabase } from "drizzle-orm/node-postgres"
 import { userSchema } from "./schema/user";
 import { MassageSchema } from "./schema/massage";
+import { conversationSchema } from "./schema/conversation";
+import { userConversationRelation } from "./schema/relation";
 
 
 
@@ -17,10 +19,12 @@ const pool = new Pool({
 const combineSchema = {
     ...userSchema,
     ...MassageSchema,
+    ...conversationSchema,
+    ...userConversationRelation
 }
 
 
 
-export const db: NodePgDatabase<typeof combineSchema>=drizzle(pool, { schema: combineSchema })
+export const db: NodePgDatabase<typeof combineSchema> = drizzle(pool, { schema: combineSchema })
 
 

@@ -9,7 +9,7 @@ async function main() {
 
     try {
         const pool = new Pool({ connectionString: process.env.DB_URL })
-        const db: NodePgDatabase = drizzle(pool)
+        const db: NodePgDatabase = drizzle(pool);
 
 
         await migrate(db, { migrationsFolder: "src/db/drizzle" });

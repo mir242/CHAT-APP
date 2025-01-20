@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "nodemon ./src/index.ts",
     "generate": "drizzle-kit generate",
-    "migrate": "tsx -r dotenv/config/ src/db/migrate.ts"
+    "migrate": "tsx -r dotenv src/db/migrate.ts"
   },
   "author": "jswithali",
   "license": "ISC",
@@ -17,8 +17,10 @@
     "dotenv": "^16.4.7",
     "drizzle-orm": "^0.38.4",
     "express": "^4.21.2",
+    "generate": "^0.14.0",
     "jsonwebtoken": "^9.0.2",
     "pg": "^8.13.1",
+    "schema": "^0.2.1",
     "socket.io": "^4.8.1"
   },
   "devDependencies": {
@@ -32,7 +34,7 @@
     "drizzle-kit": "^0.30.2",
     "nodemon": "^3.1.9",
     "ts-node": "^10.9.2",
-    "tsc": "^2.0.4",
+    "tsx": "^4.19.2",
     "typescript": "^5.7.3"
   }
 }
